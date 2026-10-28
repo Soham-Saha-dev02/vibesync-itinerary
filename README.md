@@ -146,7 +146,7 @@ vibesync-itinerary/
 
 ```bash
 # 1. Clone
-git clone https://github.com/[YOUR_GITHUB_USERNAME]/vibesync-itinerary.git
+git clone https://github.com/Soham-Saha-dev02/vibesync-itinerary.git
 cd vibesync-itinerary
 
 # 2. Install dependencies
