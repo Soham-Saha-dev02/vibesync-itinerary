@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+
+  --color-paper: #eceff6;
+  --color-ink: #141833;
+  --color-ink-soft: #565c7d;
+  --color-cobalt: #2f3cf0;
+  --color-flamingo: #ff4f9a;
+  --color-sun: #ffd93d;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-cobalt);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-sun);
+    color: var(--color-ink);
+  }
+}
+
+/* Slow drift for the overprint circles (decorative) */
+@keyframes drift-a { to { transform: translate(16px, -12px); } }
+@keyframes drift-b { to { transform: translate(-14px, 10px); } }
+@keyframes drift-c { to { transform: translate(10px, 16px); } }
+
+.drift-a { animation: drift-a 9s ease-in-out infinite alternate; }
+.drift-b { animation: drift-b 11s ease-in-out infinite alternate; }
+.drift-c { animation: drift-c 13s ease-in-out infinite alternate; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .drift-a, .drift-b, .drift-c { animation: none; }
+}
