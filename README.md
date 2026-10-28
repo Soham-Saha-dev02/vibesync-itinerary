@@ -32,7 +32,10 @@ Every travel app recommends the same places to everyone. "Top 10 things to do in
 |---|---|
 | ![Itinerary](./assets/screenshots/03-itinerary.png) | ![Places and trace](./assets/screenshots/04-places-and-trace.png) |
 
-> **Demo video:** https://vibesync-itinerary.vercel.app
+> **Live demo:** https://vibesync-itinerary.vercel.app
+> (The free-tier backend sleeps when idle, so the first request after a quiet period can take up to a minute.)
+>
+> **Demo video:** coming soon
 
 ---
 
@@ -45,7 +48,7 @@ VibeSync is a 6-step agentic pipeline:
                   title, summary, 5-8 keywords, canonical entity names, and preferred atmospheres.
 
 2. RESOLVE        Each favorite (and each qloo_entity from the vibe) is resolved to a
-                  real Qloo entity via POST /search — turning "MF DOOM" or
+                  real Qloo entity via GET /search — turning "MF DOOM" or
                   "Serial Experiments Lain" into a stable Qloo entity ID.
 
 3. TASTE-MATCH    Qloo /v2/insights is called with:
@@ -176,7 +179,7 @@ All variables live in `backend/.env`. Copy `backend/.env.example` to get started
 
 | Variable | Default | Description |
 |---|---|---|
-| `PORT` | `5000` | Backend listen port |
+| `PORT` | `5001` | Backend listen port |
 | `CLIENT_ORIGIN` | `http://localhost:5173` | Allowed CORS origin(s), comma-separated |
 | `GROQ_API_KEY` | *(required)* | Your Groq API key |
 | `GROQ_MODEL` | `openai/gpt-oss-20b` | Primary Groq model |
@@ -215,7 +218,6 @@ It resolves each name via `/search`, fetches places via `/v2/insights`, and repo
 | "Qloo returned no places for …" | City too small or not indexed | Try a major city: Tokyo, New York, London, Berlin |
 | 429 from the itinerary endpoint | Per-IP rate limit hit (8 req/min) | Wait 60 s; the backend enforces this to protect Groq quota |
 | Yellow "Sample data" banner in results | `USE_MOCK_QLOO=true` or Qloo degraded | Check `QLOO_API_KEY` and `/api/health` → `qloo.mode` |
-| Backend starts on port 5001 instead of 5000 | `PORT` in `.env` is set to 5001 | Adjust `PORT` in `.env` or update `vite.config.js` proxy |
 | Frontend cannot reach backend | Wrong port in Vite proxy | Check `vite.config.js` `server.proxy` target matches backend port |
 
 ---
