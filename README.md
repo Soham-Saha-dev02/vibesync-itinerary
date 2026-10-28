@@ -136,7 +136,7 @@ vibesync-itinerary/
 |---|---|---|
 | **Frontend** | React 18, Vite 5, Tailwind CSS 4 | UI, build tooling, styling |
 | **Backend** | Node.js 18+, Express 4 | REST API, rate limiting, orchestration |
-| **LLM** | Groq (`llama-3.3-70b-versatile`, fallback `llama-3.1-8b-instant`) | Vibe extraction, itinerary composition |
+| **LLM** | Groq (`openai/gpt-oss-20b`, fallback `openai/gpt-oss-120b`) | Vibe extraction, itinerary composition |
 | **Taste graph** | Qloo Hackathon API (`/search`, `/v2/insights`) | Cross-domain affinity, place discovery |
 | **Dev tools** | nodemon, ESM modules | Hot reload, modern JS |
 
@@ -179,8 +179,8 @@ All variables live in `backend/.env`. Copy `backend/.env.example` to get started
 | `PORT` | `5000` | Backend listen port |
 | `CLIENT_ORIGIN` | `http://localhost:5173` | Allowed CORS origin(s), comma-separated |
 | `GROQ_API_KEY` | *(required)* | Your Groq API key |
-| `GROQ_MODEL` | `llama-3.3-70b-versatile` | Primary Groq model |
-| `GROQ_FALLBACK_MODEL` | `llama-3.1-8b-instant` | Fallback if primary is rate-limited |
+| `GROQ_MODEL` | `openai/gpt-oss-20b` | Primary Groq model |
+| `GROQ_FALLBACK_MODEL` | `openai/gpt-oss-120b` | Fallback if primary is rate-limited |
 | `USE_MOCK_QLOO` | `false` | Set `true` to skip Qloo and use sample data |
 | `QLOO_FALLBACK_TO_MOCK` | `false` | Degrade to mock if a Qloo call fails |
 | `QLOO_BASE_URL` | `https://hackathon.api.qloo.com` | Qloo API base URL |

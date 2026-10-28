@@ -12,8 +12,8 @@ export const config = {
 
   groq: {
     apiKey: process.env.GROQ_API_KEY || '',
-    model: process.env.GROQ_MODEL || 'llama-3.3-70b-versatile',
-    fallbackModel: process.env.GROQ_FALLBACK_MODEL || 'llama-3.1-8b-instant',
+    model: process.env.GROQ_MODEL || 'openai/gpt-oss-20b',
+    fallbackModel: process.env.GROQ_FALLBACK_MODEL || 'openai/gpt-oss-120b',
   },
 
   qloo: {
