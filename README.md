@@ -32,7 +32,7 @@ Every travel app recommends the same places to everyone. "Top 10 things to do in
 |---|---|
 | ![Itinerary](./assets/screenshots/03-itinerary.png) | ![Places and trace](./assets/screenshots/04-places-and-trace.png) |
 
-> **Demo video:** coming soon
+> **Demo video:** https://vibesync-itinerary.vercel.app
 
 ---
 
