@@ -35,7 +35,7 @@ Every travel app recommends the same places to everyone. "Top 10 things to do in
 > **Live demo:** https://vibesync-itinerary.vercel.app
 > (The free-tier backend sleeps when idle, so the first request after a quiet period can take up to a minute.)
 >
-> **Demo video:** coming soon
+> **Demo video:** https://youtu.be/R9G-gStFVPo
 
 ---
 
